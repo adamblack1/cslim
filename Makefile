@@ -6,17 +6,13 @@ COMPONENT_NAME = CSlim
 TARGET_LIB = \
 	lib/lib$(COMPONENT_NAME).a
 
-TEST_TARGET = \
-	$(COMPONENT_NAME)_tests
+TEST_TARGET = $(COMPONENT_NAME)_tests
 
 #--- Inputs ----#
 PROJECT_HOME_DIR = .
-ifeq "$(CPPUTEST_HOME)" ""
-    CPPUTEST_HOME = ../CppUTest
-endif
-ifeq "$(CSLIM_HOME)" ""
-    CSLIM_HOME = ../cslim
-endif
+
+CPPUTEST_HOME ?= ../CppUTest
+CSLIM_HOME ?= ../cslim
 CPP_PLATFORM = Gcc
 
 # set OS_PLATFROM to win to build with winsock
